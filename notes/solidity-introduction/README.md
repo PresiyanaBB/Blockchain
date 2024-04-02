@@ -174,7 +174,7 @@ contract NewContract {
 
     function setArray(uint32[] calldata arr) public {
         delete array;
-        require(array.length == 0, "This ain't working");
+        require(array.length == 0, "This is not working");
         for(uint256 i = 0; i < arr.length; ++i) {
             array.push(arr[i]);
         }
