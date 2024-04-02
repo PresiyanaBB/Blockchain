@@ -22,7 +22,8 @@
 
 * Конструкторът е единствен
 
-- рядко използваме низове и не можем да сравняваме низове //keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))
+- рядко използваме низове и не можем да сравняваме низове
+  -- keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))
 
 * mappings, т.е. хеш-таблиците нямат `size` или `length`
 
