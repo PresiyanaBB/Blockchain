@@ -28,7 +28,10 @@
 
 * трябва да внимаваме с циклите, т.к. потенциално може да изхабим повече газ, отколкото очакваме
 
-* 3 вида памет - storage, memory, calldata/callstack
+- 3 вида памет
+  - storage - used to store data permanently on the blockchain
+  - memory - used to store temporary data that is needed during the execution of a function
+  - calldata - used to store function arguments that are passed in from an external caller
 
 * ❗❗❗ Когато пишем smart contracts, които комуникират с други, комуникацията се случва със серия от байтове
 
