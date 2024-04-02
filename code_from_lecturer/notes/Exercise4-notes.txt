@@ -1,0 +1,9 @@
+Exercise4 - notes 23.03
+
+if we send money + data and fallback isn't payable we get an error
+
+view pure payable - only 1 we can use in func declaration	
+
+payables change the state of the contract
+
+addresses holds a property balance

@@ -1,0 +1,31 @@
+Exercise7-notes
+
+Crypto-wallets
+
+ - Yhe interface that alows you to interact with the blockchain
+ - It holds the ownership to the cryptocurrency balance of the account
+ - similar to keyring
+ - holds the account's private key
+ - can hold multiple private keys
+ 
+ 
+? non-deterministic 
+ 1 private key
+ 1 public key
+ 1 address 
+ and is generated for every crypto 
+ 
+? sequential deterministic wallets
+	all addresses are generated from master private key and from it
+	we can generate many addresses by hashing it 
+	has seed
+	has mnemonic
+	
+? hierarchy deterministic
+
+Mnemonic
+	 - series of 12/24 words
+	 - used to create a Private Key
+	 - Used to import your account in another wallet 
+	 - need to be kept a secret (like the private key)
+	 - BIP29 standard
