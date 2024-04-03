@@ -168,7 +168,7 @@ contract Receiver {
         uint256 _b
     ) public {
         (bool success, bytes memory data) = _to.call{gas: _gas}(
-            abi.encodeWithSignature("sum(uint256,uint256)", _a, _b) // важно е да няма whitespace, заради encode-ването
+            abi.encodeWithSignature("sum(uint256,uint256)",_a,_b) // важно е да няма whitespace, заради encode-ването
         );
         emit ReturnedData(success, data);
     }
