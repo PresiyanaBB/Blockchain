@@ -2,6 +2,10 @@
 
 ❗ chrome има много проблеми с remix
 
+- [Contract ABI Specification](https://docs.soliditylang.org/en/develop/abi-spec.html)
+  - application binary interface
+  - в remix ide заедно с адрес на СК го използваме, за да си взимодействаме със СК, предоставя ни интерфейс
+
 ### `fallback` и `receive`
 
 #### `fallback`
@@ -10,7 +14,7 @@
 
 - by default **_не е_** дефинирана
 
-* Когато направим заявка към даден contract се минава през всички видими дефинирани функции и се търси такава, която е подходяща за обработка на текущата заявка
+* Когато направим заявка към даден contract, се минава през всички видими дефинирани функции и се търси такава, която е подходяща за обработка на текущата заявка
 
   - съотв. ако не се намери такава, като last-resort се избира `fallback`
 
@@ -20,7 +24,7 @@
 
 Tранзацията освен `from` и `to`, носи и метаданни, сред които е и количеството крипто.
 
-- **_metadata, message object, т.е. msg_**, properties от контекста на една транзакция
+- **_metadata, message object, т.е. msg_**, properties от **контекста** на една **транзакция**
 
 * метаданните се overwrite-ват при изпълняването на транзакции
 
@@ -85,8 +89,11 @@ contract contractThree {
 - `.balance`
 - `transfer()`
 - `send()`
+- `call()`
+- `delegatecall()`
+- ...
 
-### Транзакции между два контракта, `transfer` и `send`
+#### Транзакции между два контракта, `transfer` и `send`
 
 - `send` е low level функция, връща булева стойност, може да добавим конкретна логика след приключването на функцията с успех или неуспех.
 
@@ -148,9 +155,9 @@ contract Receiver {
 
 ```
 
-### Транзакции между два контракта, `call` и `delegatecall`
+#### Транзакции между два контракта, `call` и `delegatecall`
 
-#### `call`
+##### `call`
 
 - Подобна на send, но позволява изпълняването на допълнителна логика под формата на функция, която можем да извикаме.
 - Можем да посочим количеството газ, което искаме да пуснем за изчислението
@@ -168,7 +175,7 @@ contract Receiver {
         uint256 _b
     ) public {
         (bool success, bytes memory data) = _to.call{gas: _gas}(
-            abi.encodeWithSignature("sum(uint256,uint256)",_a,_b) // важно е да няма whitespace, заради encode-ването
+            abi.encodeWithSignature("sum(uint256,uint256)", _a, _b) // важно е да няма whitespace, заради encode-ването
         );
         emit ReturnedData(success, data);
     }
@@ -181,7 +188,7 @@ contract Receiver {
 
 - Ако искаме да пращаме крипто, трябва функцията, която викаме да бъде `payable`, в противен случай ще отидем във `fallback` или `receive`(на получателя), понеже няма да бъде подходяща.
 
-#### `delegatecall`
+##### `delegatecall`
 
 - Подобна е на `call`, но само по това, че се използва логиката на посочена функция, но **в контекста на текущия contract**.
 
@@ -266,7 +273,7 @@ contract Receiver {
 
 ```
 
-#### `namedcall`
+##### `namedcall`
 
 - cascades exceptions
 
