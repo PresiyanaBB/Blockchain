@@ -1,0 +1,19 @@
+DoS = Denial of Service , when our contract gets too expensive due to gas
+--------------------------------------------------------------------------
+
+1. for(int i=0; i< arr.length ; ++i)
+      -> if the array is dynamic and can grow to more than for example 5-10 elements than it is too gas efficient at the end
+      -> if it has unbounded length
+
+2. for loop in another for loop
+
+3. if we revert when we don't really want or won't be ideal if we do
+      -> (bool success, bytes memory data) = payable(receiverAddr).call{ value:amount , gas:gasLimit}("");
+         -> if success is false because the receiver doesn't have reveice or fallback, or gas wasn't enough and we revert but we really wan't our function to finish
+
+4. if there is a call is there any chance it can fail and if so - is there a chance some important function reverts
+      -> if there is set gas limit in the call func
+      -> if we send eth(or whatever the native token is) but it doesn't have receive/fallback
+      -> if the function we are calling doen't exist
+
+

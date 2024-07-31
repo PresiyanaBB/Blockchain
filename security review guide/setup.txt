@@ -1,0 +1,45 @@
+1. Download/clone the repo locally
+2. Create your own branch/ Create new project and copy only funcs you test
+3. In README.md up in command pallete write >Markdown: Open preview
+   - or you can you the shortcut: ctrl + shift + v
+4. Read the documentation and see what the project should and shouldn't do and write a plan 
+5. Use right click on src folder and use Solidity Metrics extension
+6. See all files with their LoC, dependencies and Public/External functions as they are most likely to be attacked
+7. Start reading the .sol files and write comments
+8. If you want to test something suspicious copy the function and in your copied project/branch test it in some .t.sol file
+9. Create as many as possible fuzz test while also auditing manually
+10. Maybe ask questions about the version, modifiers and what the project should do 
+11. Run slither/aderyn to see static audit by these tools
+    -> $ slither . --exclude-dependencies
+
+--------------------------------------
+commands:
+
+git clone <https://github.com/.../...>
+git checkout <hash of project version provided>
+git switch -c <give name of your branch like "projectName-audit">
+
+--------------------------------------
+notes - you should write notes when you have something in mind like:
+
+// @audit-note ....
+// @audit-question ... ?
+// @audit-info ...
+// @audit-high ... can be high, mid, low
+
+
+
+write comments to be faster in the code like:
+
+/* /////////////////////////////////////////////////////////////////////////
+		VARIABLES / EVENTS / ERRORS / X FUNCTIONALITY
+///////////////////////////////////////////////////////////////////////// */
+
+and so on and put them where you like
+
+---------------------------------------
+conventions: 
+
+s_varName -> storage variable 
+error FileName_Error();
+

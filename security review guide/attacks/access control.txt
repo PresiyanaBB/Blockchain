@@ -1,0 +1,10 @@
+Access control attack are when someone does something outside what his role can.
+
+1. Private variables/storage variables are NOT so private in the blockchain so we shouldn't keep them in our contracts
+   -> No passwords or any sensitive info should be store in a smart contract no matter if it is stored as private variable and doesn't have getter or not
+   -> private means it is not visible for other contracts, but it is visible for people
+   -> we should be careful if we store sensitive info like passwords
+
+2. We should always check who should be able to execute the function and who actually can
+   -> if there are some things that only certain role can do there should be a modifier/require
+
