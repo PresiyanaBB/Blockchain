@@ -1,0 +1,21 @@
+Exercise3 - notes 20.03
+
+Mapping:
+	keys can only be primitive data types which are hashed and transformed to address
+ 
+ 
+calldata is used for input params
+
+one transaction has a lot of metadata (not only sender/receiver). The metadata is accessible through msg (object) keyword. So msg.value is the amount of the crypto sent.
+the value is always in WEI
+
+if we send crypto and data but the fallback isn't payable we get an error and revert 
+
+we can access smth outside of the network with specific SC called Oracle (it is a big security thread)
+
+always when we refer to a SC we call it throuhh its address 
+all function and fields "live" on that address
+in order to communicate with a SC we should know its address
+
+account ~ address (account is a bit more abstract)
+

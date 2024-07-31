@@ -1,0 +1,49 @@
+Exercise6 - notes
+
+интересно за разглеждане е helium с три консенсусни механизма 
+
+Ethereum addresses
+
+types:
+
+I. EOA (Externally owned accounts) (от човек): 
+	- контролира се от прайвет кии
+	- само те могат да инициират транзакции
+	- транзакциите между ЕОА-та могат да бъдат само eth/token трансфери	
+	- не струват нищо, за да бъдат създадени
+	- има пропърти nonce, което е реално броян на транзакции
+	
+към момента смарт контракт не може сам да тригерира транзакция само ЕОА (човешки акаунт) може
+смарт контрактите служат за допълните логика, но в крайна сметка пак става върпос за транзакция между 2-ма човека
+
+Генериране на ЕОА
+	1. правим си частен ключ 32 байта (64 символа в хекс)
+	2. perform ECDSA (ECM) on the secp256k1 elliptic curve => results in 64 bytes (128 symbols in hex)
+	3. hash the Key using Keccak-256 => results in 64 characters, 32 bytes hash code
+	4. take the last 20 bytes (cuting the first (12) => results in an Address (account) - 40 chars, 20 bytes
+	5. put '0x' prefix in front of the address for readability 
+
+II. Contract Accounts (CA)
+	- Controlled by code (smart contract)
+	- doesn't have a PK/FK so cannot send crypto because he cannot sign the transaction (thats because the CA is immutable and we dont need a verification we can see the code
+		on the ledger. The signing is used for EOA because people have to verifu themselves
+	- can only send transactios in response to receiving a transaction
+	- Transactions from an EOA to a CA can trigger cod that does many actions, including creating a new contract
+	- they are usually in the middle of the transaction chain (callstack) cannot be at the beginning and its not logical to be at the end (so a middleman)
+	
+	Generating a CA
+	1. Take the address sender (deployer) (EOA) that deploys the cotnract 
+	2. take that address's nonce(sender)
+	3. encode in RLP both fields as an array [address(sender), Nonce(sender)
+	4. Hash the serialized result with Keccak-256
+	5. take last 20 bytes of hash
+	6. put '0x' prefix in front of the address for readability (looks the same as EOA)
+	
+СК е направен да реагира по определен начин на дадена транзакция
+
+транзакция, в която участва СК се нарича internal transaction
+
+добра практика е като се deploy-ва СК да се прави от чисто нов адрес, защото иначе някой може да ни знае адреса 
+и да ни предвиди адреса на СК-а и да прави транзакции или други мизериики
+
+вж: blockchain trilema
