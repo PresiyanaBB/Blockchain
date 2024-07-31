@@ -1,5 +1,6 @@
 # Blockchain
-Blockchain course summary
+1. Blockchain course summary
+2. Security audit/review guide
 
 - useful links:
   -   https://startupfactory.bg/blokcheyn-tehnologia/
