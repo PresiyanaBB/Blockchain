@@ -1,6 +1,5 @@
 # Blockchain
 ## 1. Blockchain course summary
-https://google.com
 ## 2. Security audit/review guide
 
 - useful links:
