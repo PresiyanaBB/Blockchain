@@ -2,7 +2,7 @@
 ## 1. Blockchain course summary
 ## 2. Security audit/review guide
 
-- useful links:
+- first steps:
   -   [Cyfrin Updraft course](https://updraft.cyfrin.io/courses)
   -   [Foundry book](https://book.getfoundry.sh/)
   -   [Codehawks first flights](https://codehawks.cyfrin.io/first-flights?community-judging=true&ended=true&judging=true&live=true&sort=endDate&upcoming=true)
@@ -10,7 +10,7 @@
   -   [DeFi Attack Vectors](https://github.com/Quillhash/DeFi-Attack-Vectors.git)
   -   [Common Vulnerabilities](https://hacken.io/insights/blockchain-security-vulnerabilities/)
   -   [Auditors Roadmap](https://github.com/razzorsec/AuditorsRoadmap.git)
--   others:
+-   other useful links:
     -   https://startupfactory.bg/blokcheyn-tehnologia/
     -   https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.24+commit.e11b9ed9.js
     -   https://metamask.io/
