@@ -1,9 +1,0 @@
-[H/M]
-
-Mishandling of eth:
-
-1. If our contract depends on its onw ballance (if ballance == x) , then attacker may send eth via selfdestruct() and cause DoS
-   -> Mitigations: use >= and not ==
-
-2. If we send eth to multiple users in one tx, attacker may have revert() in his receive()/fallback() causing DoS
-    -> Mitigations: send eth to only 1 user per tx
