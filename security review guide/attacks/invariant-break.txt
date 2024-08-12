@@ -1,0 +1,31 @@
+[H]
+
+Invariant break:
+
+1. We should check our invariant if they are in fact invariants
+   -> note: see if there are some weird fees or math error or smth like that
+
+
+
+Test specifics:
+import {Test} from "forge-std/Test.sol"; 
+import {StdInvariant} from "forge-std/StdInvariant.sol";
+import {AlwaysEven} from "../src/AlwaysEven.sol";
+
+contract Tester is StdInvariant, Test {  //it is important to first inherit StdInvariant and then Test
+    AlwaysEven alwaysEven; //the contract we test
+         
+    function setUp() public {
+        alwaysEven = new AlwaysEven();
+        targetContract(address(alwaysEven));
+    }
+
+    function invariant_testsetEvenNumber() public view {  //with no params
+        assert(alwaysEven.alwaysEvenNumber() % 2 == 0);
+    }
+}
+
+// $ forge test --mt invariant_testsetEvenNumber -vvv
+	
+// selectors are for the stateful tests to know what function on what contract to call 
+// that is why we use targetSelectors(FuzzSelector({...})) and targetContract()
