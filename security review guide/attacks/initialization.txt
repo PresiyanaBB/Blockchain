@@ -1,0 +1,6 @@
+[M]
+
+Initialization:
+
+1. When we have function init and not a constructor, we may init it multiple times or even work with uninitialized protocol.
+   We must check if the protocol is initialize and initialize it if needed
