@@ -52,9 +52,10 @@ Use pull over push -> make ppl pull their money themself instead of you sending 
 
 ----------------------------------------------------------------------------------------------------------------
 
-9. 
+9. encodePacked with dynamic data -> how are we sure if we encoded [01, 23] and not [0,123] or [012,3]
 
 
+----------------------------------------------------------------------------------------------------------------
 
 
 
