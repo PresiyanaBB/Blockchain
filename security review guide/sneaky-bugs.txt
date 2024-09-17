@@ -57,5 +57,14 @@ Use pull over push -> make ppl pull their money themself instead of you sending 
 
 ----------------------------------------------------------------------------------------------------------------
 
+10. check if the contract receives tokens - it must have receive, fallback and withdraw functions  (H)
 
 
+----------------------------------------------------------------------------------------------------------------
+
+11. check if the protocol works with some weird erc20's from my github repo
+
+
+----------------------------------------------------------------------------------------------------------------
+
+12. 
