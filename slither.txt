@@ -1,1 +1,1 @@
-slither folder/ --exclude-informational --exclude-low --exclude-optimization --exclude-dependencies
+slither folder/ --exclude-informational --exclude-optimization --exclude-dependencies
