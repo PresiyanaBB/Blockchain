@@ -12,10 +12,12 @@ underflow:
 2. unchecked { uint8 var = 0 - 1 ; }
 
 
-precision loss:
+precision loss / rounding:
 
 1. solidity doesn't support floating point decimal so we have to be aware of data loss
 2. uint256 res = 225/4; //this will be 56, but actual result must be 56.25
+3. when we see a division sign '/' , we must check for rounding errors and think of edge cases
+4. we can use https://www.mathsisfun.com/calculator-precision.html to check for precision loss
 
 
 Mitigations:
