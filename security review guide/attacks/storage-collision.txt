@@ -1,7 +1,0 @@
-[H]
-
-Storage collision:
-
-1. When there are 2 or more implementations (or some upgraded contract) and storage variable are not in the same slots in storage
-   -> constract A { bool first; bool second; } , contract B { bool second; bool first; }   //they are on diff places in storage
-   -> constract A { bool first; bool second=true; } , contract B { bool first; bool constant SECOND=true; }   //constants are not in storage, they are in the bytecode!!

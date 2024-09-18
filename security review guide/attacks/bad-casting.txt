@@ -1,5 +1,0 @@
-[H/M]
-
-Bad casting: 
-
-1. When we have for example uint256 and down-cast it to uint64 when it can actually reach values greater than type(uint64).max
