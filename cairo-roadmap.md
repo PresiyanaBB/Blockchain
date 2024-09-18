@@ -1,8 +1,5 @@
 # Cairo-Roadmap
 
-<p align="center">
-    <img src="banner.jpg" alt="Banner">
-</p>
 
 1. [**Starknet Basecamp Self Serve Playlist**](https://www.youtube.com/playlist?list=PLMXIoXErTTYWjJGmSMgORC7O8tKffBhfU)
 2. [**Cairo Book Tutorial Series**](https://www.youtube.com/playlist?list=PLssfMBipa9PSg_gpuqsQ8_5p5zjHNAPp8)
