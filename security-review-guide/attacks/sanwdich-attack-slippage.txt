@@ -1,0 +1,12 @@
+[H]
+
+Sandwich attack / slippage :
+
+1. When we have AMM or x*y=k , where 2 token's prices are related to eachother. This means if we have a supply of 100 tokenA and 100 tokenB, we can trade between these two tokens and the amount per price we pay is calculated with this invariant x*y=k. Problem is when someone front-run us and buy a huge amount of one of the tokens, this will change the price for us and we will get much less tokens than we expected by the same price. Then the malicious user that front-runned us can sell his tokens once we also moved the price and be at profit. 
+
+2. If we have any type of swap between two or more tokens we need slippage that is reasonable
+
+
+Mitigations:
+
+Use a slippage - if you want to buy tokenA at priceA , then say that you allow slippage of for example 2% ( 0.98 * tokenA amount ) or in other words a minimum amount of tokens you are willing to take for the same money. Then if someone front-runs you with more than the slippage you are willing to take, your transaction will revert and you will not loose any money.
