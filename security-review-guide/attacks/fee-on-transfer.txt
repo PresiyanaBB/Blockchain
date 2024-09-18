@@ -1,0 +1,29 @@
+[M]
+
+Fee on transfer:
+
+1. When we have some fee when we transef tokens for example 0.1%, we want to use the rest of the calculations based on what we really received without counting the fee
+
+ => DON'T DO:
+
+function (amount) external {
+
+	token.transferFrom(msg.sender, this, amount)
+	
+	... using amount in the accountings
+}
+
+
+ => DO:
+
+function (amount) external {
+
+	uint256 balanceBefore = token.balanceOf(this)
+
+	token.transferFrom(msg.sender, this, amount)
+	
+	uint256 balanceReceived = token.balanceOf(this) - balanceBefore 	
+
+	... using balanceReceived in the accountings
+}
+
