@@ -1,0 +1,12 @@
+[H]
+
+Reentrancy - when the transfer of money is before the update of the state, thus a hacker can call the same function in its receive() and will always get the money and will spam calls because the state isn't updated yet
+
+
+1. Every time we tranfer money and update the state of some variables, make sure to FIRST UPDATE , THEN TRANSFER the money
+
+
+CEI rule to prevent reentrancy:
+1. Checks/requires
+2. Effect/change state/change vars/make impact
+3. Interact/send money/transfer/call

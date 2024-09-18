@@ -1,0 +1,84 @@
+from:   https://youtu.be/8fNNVQv4-oY?si=nb1XIVReNRykev1i
+
+
+
+1. If we have:
+struct Objects{
+mapping(uint64 => uint64) idToId;
+}
+
+mapping(uint64 => Objects) obj;
+
+
+if we delete objects[1] for example , it corresponds to a struct. When deleting the struct the value in mapping idToId is not deleted, thus with objects[1] we will still get whatever we had written before deleting the struct! Make sure to first set them to zero or another zero value.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+2. If we have upgradeable contract, make sure every immutable/constant variable is written in the upgraded contract. This is because these variables are not in storage, but in the bytecode of the contract, so when we upgrade we don't copy them.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+3. Downcasting/upcasting do not revert if the smaller type overflows/underflows so if we downcast from uint64 to uint8 or upcast from int8 to uint8 if the transaction revertss we will have some high severity finding
+
+
+----------------------------------------------------------------------------------------------------------------
+
+4. Don't forget to add withdraw function even though your contract is not supposed to receive money
+
+
+---------------------------------------------------------------------------------------------------------------- 
+
+5. If we have parallel data structures - one struct of ppl and one mapping of index to person. When we remove someone we must pay attention to their index and see if we had switched it correctly
+
+
+----------------------------------------------------------------------------------------------------------------
+
+6. When dividing be aware that there may be a precision loss because solidity does not have floating point types
+
+
+----------------------------------------------------------------------------------------------------------------
+
+7. If anyone can't receive tokens and there is a loop of contestants for example and we try to send everyone tokens, be aware that if some of them can't receive tokens the whole transaction will revert and cause DOS
+
+Use pull over push -> make ppl pull their money themself instead of you sending them
+
+
+----------------------------------------------------------------------------------------------------------------
+
+8. Never use msg.value in a loop !!!
+
+
+----------------------------------------------------------------------------------------------------------------
+
+9. encodePacked with dynamic data -> how are we sure if we encoded [01, 23] and not [0,123] or [012,3]
+
+
+----------------------------------------------------------------------------------------------------------------
+
+10. check if the contract receives tokens - it must have receive, fallback and withdraw functions  (H)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+11. check if the protocol works with some weird erc20's from my github repo
+
+
+----------------------------------------------------------------------------------------------------------------
+
+12. When we have a try-catch block make sure that the catch does not only catch one error but all sorts of reverts/errors (with bytes memory reason)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+13. 
+
+
+
+
+
+
+
+
+

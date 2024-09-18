@@ -1,0 +1,15 @@
+[M]
+
+Weak randomness / pseudo-random number generators (PRNGs) - when we we use weak random generating method or one that can be controlled by miners or nodes
+
+
+1. Do NOT use: 
+   -> block.timestamp
+   -> blockhash
+   -> block.number
+   -> block.difficulty
+   -> block.prevrandao
+   -> address(addr).balance
+   -> address / msg.sender    
+
+basically we should avoid everything that can be manipulated
