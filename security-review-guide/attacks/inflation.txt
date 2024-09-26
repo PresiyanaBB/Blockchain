@@ -1,0 +1,37 @@
+[H]
+
+Inflation attack:
+
+
+The problem with this attack is that it is vulnarable to sandwich attacks
+
+
+1. uses balanceOf
+2. rounding down/ presicion loss => uses / => check with really small amount (1wei) and really big amount 1 or 10 or 100 eth
+   => we have to make the a/b so that b is bigger than a so it rounds down to 0 
+   => check arithmetic attack to see website that calcukates such divisions
+3. has first depositor logic => for example if(supply==0)return 1 ether;
+
+
+if we have all 3 of these there is probably inflation attack:
+https://youtu.be/3IMw7xbxJgY?si=HDbQ4Rg-I1RiAyN3
+
+if we have a vault
+
+--------------------------------------------------------------------------
+
+bonus:
+
+Liquidation
+
+may revert if:
+transfer 0 amount
+the person is blacklisted
+
+
+must check fees when we transfer and then calculate, update and gets the fees and sees if the person can pay them
+check if there is enough money to borrow - when a position becomes insolvent
+check if the position is healthy => not liquidatable, not insolvent
+
+
+
