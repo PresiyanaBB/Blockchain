@@ -12,6 +12,7 @@
   -   [Auditors Roadmap](https://github.com/razzorsec/AuditorsRoadmap.git)
   -   [cmichel "How to become a smart contract auditor"](https://cmichel.io/how-to-become-a-smart-contract-auditor/)
   -   [Cyfrin audit checklist](https://github.com/Cyfrin/audit-checklist.git)
+  -   [Owen Thurm youtube](https://www.youtube.com/@0xOwenThurm)
 -   other useful links:
     -   https://startupfactory.bg/blokcheyn-tehnologia/
     -   https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.24+commit.e11b9ed9.js
