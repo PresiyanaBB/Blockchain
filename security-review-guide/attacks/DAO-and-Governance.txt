@@ -1,0 +1,8 @@
+[H]
+
+DAO and Governance
+
+Must check if the voting is not active in the commit()
+Must check if the voting is still active in the vote()
+
+If it has emergencyCommit() , must check if the voting is still active and also if there is a waiting period (for example 1 day), but at the end of it and the malicious user will be able to steal all funds if he waits 1 day and the voting is not over. This can happen if there is a flashloan that gets the malicious user the majority of the vote. 
