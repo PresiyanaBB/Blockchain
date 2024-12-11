@@ -17,5 +17,6 @@
     -   https://startupfactory.bg/blokcheyn-tehnologia/
     -   https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.24+commit.e11b9ed9.js
     -   https://metamask.io/
+-   [Weird erc20 list](https://github.com/d-xo/weird-erc20?tab=readme-ov-file)
  
 ## 3. Examples of popular exploits copied from [Cyfrin's sc-exploits-minimized repo](https://github.com/Cyfrin/sc-exploits-minimized.git)
