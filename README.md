@@ -20,3 +20,4 @@
 -   [Weird erc20 list](https://github.com/d-xo/weird-erc20?tab=readme-ov-file)
  
 ## 3. Examples of popular exploits copied from [Cyfrin's sc-exploits-minimized repo](https://github.com/Cyfrin/sc-exploits-minimized.git)
+## 4. Find me on [Cantina](https://cantina.xyz/u/PresiyanaBB) and [Code4rena](https://code4rena.com/@Sisi)
